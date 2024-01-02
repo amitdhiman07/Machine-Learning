@@ -1,0 +1,112 @@
+K-Nearest Neighbors (KNN) Classifier Documentation
+Introduction
+
+This documentation provides an overview of a simple implementation of the K-Nearest Neighbors (KNN) classifier written in Python. The purpose of this classifier is to predict the category of a new point based on its proximity to existing points in a given dataset.
+Table of Contents
+
+    Dependencies
+    Test Data
+    Euclidean Distance Calculation
+    KNearestClassifier Class
+    Usage
+
+1. Dependencies <a name="dependencies"></a>
+
+This implementation requires the following Python libraries:
+
+    numpy: For efficient numerical operations.
+    collections.Counter: For counting occurrences of categories.
+
+Ensure you have these libraries installed before using the code.
+
+bash
+
+pip install numpy
+
+2. Test Data <a name="test-data"></a>
+
+The provided test data consists of two categories, "blue" and "red," each containing two points represented by their (x, y) coordinates.
+
+python
+
+points = {
+    "blue": [[2, 5], [7, 9]],
+    "red": [[1, 4], [6, 2]]
+}
+
+3. Euclidean Distance Calculation <a name="euclidean-distance-calculation"></a>
+
+The euclidean function calculates the Euclidean distance between an observed point and an actual point using the formula:
+
+distance=∑i=1n(xi−yi)2distance=∑i=1n​(xi​−yi​)2
+
+​
+4. KNearestClassifier Class <a name="knearestclassifier-class"></a>
+
+The KNearestClassifier class represents the KNN classifier. It has the following methods:
+4.1. Constructor
+
+python
+
+def __init__(self, k=5):
+    """
+    Initializes the KNearestClassifier.
+
+    Parameters:
+    - k (int): Number of neighbors to consider during classification (default is 5).
+    """
+    self.k = k
+    self.points = None
+
+4.2. Fit Method
+
+python
+
+def fit(self, points):
+    """
+    Feeds the training data into the model.
+
+    Parameters:
+    - points (dict): Training data consisting of categories and their respective points.
+    """
+    self.points = points
+
+4.3. Predict Method
+
+python
+
+def predict(self, new_point):
+    """
+    Predicts the category of a new point based on its proximity to existing points.
+
+    Parameters:
+    - new_point (list): Coordinates of the new point.
+
+    Returns:
+    - str: Predicted category.
+    """
+    distances = []
+
+    for category in self.points:
+        for point in self.points[category]:
+            distance = euclidean(point, new_point)
+            distances.append([distance, category])
+
+    categories = [category[1] for category in sorted(distances)[:self.k]]
+    result = Counter(categories).most_common(1)[0][0]
+
+    return result
+
+5. Executing
+
+Example usage of the KNN classifier:
+
+python
+
+clf = KNearestClassifier()
+clf.fit(points)
+new_point = [3, 0]
+prediction = clf.predict(new_point)
+print("Prediction:", prediction)
+
+This will output the predicted category of the new point based on the KNN algorithm.
