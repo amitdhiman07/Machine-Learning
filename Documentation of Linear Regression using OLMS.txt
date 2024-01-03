@@ -1,0 +1,52 @@
+Certainly! Below is an example of a more detailed documentation for your Linear Regression model code:
+
+markdown
+
+# Linear Regression Model from Scratch Documentation
+
+## Overview
+This Python script implements a Linear Regression model using the Ordinary Least Mean Square (OLS) approach. The goal is to predict the target variable (Y) based on an independent variable (X).
+
+## Getting Started
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/linear-regression-model.git
+   cd linear-regression-model
+
+    Install the required libraries:
+
+    bash
+
+pip install pandas numpy
+
+Download the dataset or replace the file path in the code with your dataset.
+
+Run the script:
+
+bash
+
+    python linear_regression_model.py
+
+Code Structure
+
+    Importing Libraries: The necessary Python libraries (pandas, numpy) are imported.
+
+    Getting Data: The script reads a dataset from a specified file path.
+
+    Selecting Variables: The independent (X) and dependent (Y) variables are selected from the dataset.
+
+    Calculating Coefficients (m and b): The mean of X and Y is calculated, followed by the determination of coefficients using the OLS approach.
+
+    Model Accuracy Evaluation:
+        Root Mean Squared Error (RMSE): A metric to evaluate the accuracy of the model.
+        R2 Score: A measure of how well the model fits the data.
+
+Dataset
+
+The script assumes a dataset with columns for the chosen independent (X) and dependent (Y) variables. Replace the file path with your dataset.
+Model Evaluation
+
+The script calculates coefficients, RMSE, and R2 score to assess the accuracy of the model.
+License
+
+This project is licensed under the MIT License.
