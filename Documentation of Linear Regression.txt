@@ -1,0 +1,57 @@
+Boston Housing Prediction By Using Linear Regression
+Introduction:
+
+This Python script demonstrates a linear regression model for predicting Boston housing prices. The dataset used contains various features related to housing, such as crime rate, land zoning, and more.
+Libraries Used:
+
+    numpy: For numerical operations.
+    pandas: For data manipulation and analysis.
+    seaborn and matplotlib.pyplot: For data visualization.
+    sklearn: For machine learning tasks.
+
+Dataset:
+
+The dataset is loaded from a CSV file using Pandas (Housing.csv). It includes information on various attributes related to Boston housing, such as crime rate, room numbers, and median property value.
+Data Exploration:
+
+    The script explores the dataset by checking data types, null values, and columns.
+    Null values are dropped from the dataset to ensure clean data.
+
+Attribute Information:
+
+    CRIM: Per capita crime rate by town.
+    ZN: Proportion of residential land zoned for lots over 25,000 sq.ft.
+    INDUS: Proportion of non-retail business acres per town.
+    CHAS: Charles River dummy variable (= 1 if tract bounds river; 0 otherwise).
+    NOX: Nitric oxides concentration (parts per 10 million).
+    RM: Average number of rooms per dwelling.
+    AGE: Proportion of owner-occupied units built prior to 1940.
+    DIS: Weighted distances to five Boston employment centers.
+    RAD: Index of accessibility to radial highways.
+    TAX: Full-value property-tax rate per $10,000.
+    PTRATIO: Pupil-teacher ratio by town.
+    B: 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town.
+    LSTAT: % lower status of the population.
+    MEDV: Median value of owner-occupied homes in $1000's.
+
+Data Visualization:
+
+    A heatmap is used to visualize the correlation between different attributes.
+    Scatter plots show the relationships between housing prices (MEDV) and two selected features (RM and LSTAT).
+
+Feature Selection:
+
+    Features (RM and LSTAT) are selected based on their correlation with the target variable (MEDV).
+
+Data Splitting:
+
+    The dataset is split into training and testing sets using the train_test_split function from sklearn.model_selection.
+
+Linear Regression Model:
+
+    The linear regression model is applied using the LinearRegression class from sklearn.linear_model.
+    Model evaluation is performed on both the training and testing datasets using metrics such as Root Mean Squared Error (RMSE) and R-squared (R2) score.
+
+Conclusion:
+
+The script provides a comprehensive example of building and evaluating a linear regression model for predicting Boston housing prices based on selected features. Model evaluation metrics help assess the model's performance on both training and testing datasets.
